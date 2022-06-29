@@ -1,0 +1,650 @@
+
+//==========================================================================================//
+//?========================================= Start =========================================//
+
+.get-started {
+    background-color: $bg;
+
+		// .get-started__container
+
+		&__container {
+			padding: rem(150) rem(15) rem(50) rem(15);  //внутренний отступ
+			display: flex; // делает эллемент блочным
+			align-items: center; //выранивает эллементы по центру 
+			flex-wrap: wrap; // разрешает перенос строки
+			position: relative; //делает эллемент родителем
+			@media (max-width: rem(767.98)) { //брекпоинт при разрешении экрана меньше 767.98
+				padding: rem(120) rem(15) rem(50) rem(15); //внутренний отспупы
+			}
+				&::before{
+					content: ' ';
+					position: absolute; // позицианирует эллементы относительно родителя
+					width: 100vw; //устанавливает ширину эллемента
+					height: 100%; // устанавливает высоту эллемента
+					right: rem(267); // позицианирует по горизонтали
+					top: 0; //позицианирует по вертикали
+					transform: translate(100%, 0px); //двигает к правому краю
+					border-radius: rem(30) rem(0) rem(0) rem(30); // скругляем углы
+					background-color: $red; //задаем цвет
+						@media (max-width: rem(991.98)) {
+							right: rem(215); // позицианируем по горизонтале 
+							border-radius: rem(20) rem(0) rem(0) rem(20); //скругляем углы
+						}
+						@media (max-width: rem(767.98)) {
+							display: none; //убираем красный декор
+						}
+				}
+		}
+
+		// .get-started__content
+
+		&__content {
+			flex: 0 1 48%; //разделяет блок между двумя под блоками
+			padding: rem(0) rem(20); // устанавливаем внутренний отступ
+			@media (max-width: rem(767.98)) { // брекпоинт при разрешении экрана меньше 767.98
+				flex: 1 1 100%; // контейнер занимает всю ширину
+				text-align: center; // выранивание текста по центру 
+				padding: 0; // убирает внутренний отступ
+				
+			}
+		}
+
+		// .get-started__text-block
+
+		&__text-block {
+			max-width: rem(410); // максимальная шиирна
+				@media (max-width: rem(767.98)) { // брекпоинт при разрешенни экрана меньше 767
+				max-width: none;// убираем максимальную ширину
+				
+			}
+		}
+
+		// .get-started__video
+
+		&__video {
+			flex: 1 1 100%; //контейнер занмает всю ширину
+			padding: rem(60) rem(0) rem(0) rem(20);// внутренние отступы
+				@media (max-width: rem(767.98)) { // брекпоинт при разрешении экрана меньше 767
+					flex: 1 1 100%; //контейнер занимает всю ширину
+					text-align: center; // выравнивает текст по центру
+					padding: 0; // убирает внутренний отступ
+			}
+		}
+
+		// .get-started__image
+
+		&__image {
+			flex: 0 1 52%; //разделяет блок между двумя под блоками
+			position: relative; // делает ээлемент родительским 
+			z-index: 2; //элемент накладывается поверх других эллементов у которых индекс меньше
+			@media (max-width: rem(767.98)) { // брекпоинт при разрешении экрана меньше данной
+				flex: 1 1 100%; // контейнер занмает всю ширину 
+				text-align: center; // выравнивает текст по центру
+				padding: rem(30) rem(0); //внутренние отсупы
+			}
+				img{
+					max-width: 100%;// максимальная ширина
+				}
+		}
+}
+
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+
+.text-block {
+	
+		// .text-block__title
+		&__title {
+			font-weight: 700; //начертание 
+			font-size: 44px; //кегель
+			line-height: 126%; //межстрочный интервал 
+			color: $mainColor; //цвет 
+				@media (max-width: rem(767.98)) { //брепоинт  при разрешении экрана меньше данной 
+					font-size: 34px; // кегель
+					text-align: center; // выранивает текст по центру
+					
+				}
+				span{
+					color: $pink; //цвет
+				}
+				&:not(:last-child){ //обращаемся ко всем эллементам кроме последнего 
+					margin: rem(0) rem(0) rem(12) rem(0); // внешний отступ
+				}
+		}
+
+		// .text-block__title-blue
+		&__title-blue {
+			
+				span{
+					color: $sb; //цвет
+				}
+		}
+
+		// .text-block__text
+		&__text {
+			color: $gray; //цвет 
+			line-height: 138.5%; // межстрочный интервал
+			@media (max-width: rem(767.98)) { // брекпоинт при разрешении экрана ментше данной 
+				text-align: center; // выравнивание теста по центру
+			}
+			&:not(:last-child){ // обращаемся ко всем эллемнетам кроме последнего
+				margin: rem(0) rem(0) rem(24) rem(0); // устанавливаем внешний отспуп
+			}
+
+		}
+
+
+}
+
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+
+.video-get-started {
+	display: inline-flex;// эллемент оставаяссь строчным становится флекс эллементом 
+	align-items: center; // выранивает текст по центру 
+		// .video-get-started__icon
+
+		&__icon {
+			flex: 0 0 44px; //разделяет блок между двумя под блоками
+			transition: .8s; //плавность анимации
+			&:hover{
+				transform: scale(1.2);// увеличивает эллемент не затрагивая другие эллементы
+				
+			}
+		}
+
+		// .video-get-started__body
+
+		&__body {
+			padding: rem(0) rem(0) rem(0) rem(12); // внутренний отступ 
+		}
+
+		// .video-get-started__title
+
+		&__title {
+			color: $sgray; //цвет
+			font-size: rem(13); // кегель
+			line-height: 200%; //межстрочный интервал
+			letter-spacing: rem(1.5); //межсимвольный интервал 
+		}
+
+		// .video-get-started__text
+
+		&__text {
+			color: $mainColor; //цвет 
+			text-transform: uppercase; //делает буквы заглавными
+			font-size: rem(9); //кегель
+			line-height: 126%; //межстрочный интервал 
+			letter-spacing: rem(2); //межсимвольный интервал 
+			&:not(:last-child){
+				margin: rem(0) rem(0) rem(5) rem(0); //внешний отступ
+			}
+		}
+}
+
+
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+
+.stay-safe {
+	padding: rem(80) rem(0) ; //внутренний отступ
+	@media (min-width: rem(991.98)){ //брепоинт при разрешении меньше данного 
+		padding: rem(60) rem(0); //внутренний отступ
+	}
+	@media (max-width: rem(767.98)){ //брекпоинт при разрешении меньше данного
+		margin-bottom: rem(10);	//внешний отступ снизу
+		padding: rem(30)  rem(0) ; //внутренний отступ
+	}
+	
+		// .stay-safe__container
+		&__container {
+			display: flex; //делает эллемент блочным и выравнивает элемменты
+			align-items: center; // выравнивает эллементы по центру 
+			@media (max-width: rem(767.98)){ // брекпоинт при разрешении экрана меньше данного
+				flex-direction: column-reverse; // выравнивает эллементы в колонку и переворачивает ставя в обратном порядке
+				
+			}
+		}
+
+		// .stay-safe__media
+		&__media {
+			flex: 0 1 50%; //разделяет блок между двумя под блоками
+			padding: rem(0) rem(0) rem(0) rem(47); //внутренний отступ
+				@media (min-width: rem(991.98)){ //брекпоинт при разрешении экрана меньше данного
+					padding: rem(0) rem(0) rem(0) rem(47); //внутренний отступ
+				}
+		}
+
+		// .stay-safe__content
+		&__content {
+			flex: 0 1 50%; //разделяет блок между двумя под блоками
+			@media (max-width: rem(767.98)) { //брекпоинт при разрешении меньше данного
+				margin: rem(0) rem(0) rem(30) rem(0); //внешний отступ
+			}
+		}
+
+		
+}
+.media-stay-safe {
+	width: 373px; //ширина
+	padding: rem(56) rem(0) rem(27) rem(0); //внешний отступ
+	position: relative; //делает эллемент родительсим
+	text-align: center; // выравнивание по центру
+	@media (max-width: rem(767.98)) { //брекпоинт при разрешении меньше данного
+		width: rem(290); //ширина
+		margin-right: rem(15);//отстпу вправо
+	}
+	@media (max-width: rem(479.98)) { //брекпинт при разрешенни меньше данного
+		width: rem(290); //ширина
+	}
+	
+
+		// .media-stay-safe__img
+		&__img {
+			display: inline-block; //делает элемент блочным при этом он сохраняет свойства строчного эллемента
+			box-shadow: 2px 4px 32px rgba(0, 0, 0, 0.12); //тень
+			border-radius: 16px; // скругление
+			position: relative; //делает эллемент родительским
+			width: 61.5%; //ширина
+			
+
+				img{
+					position: relative; //делает эллемент родительским
+					z-index: 2; //накладывает поверх другого эллемента у которого индекс меньше
+					max-width: 100%; //максимальная ширина
+				}
+				&::after{
+					content: ' '; //обязательное свойство отвечающее за отображене контента 
+					position: absolute; //позицианирует относительно родителя
+					bottom: rem(-12); //позицианирует снизу
+					left: rem(12); //слева 
+					width: rem(206); //ширина
+					height: rem(27); //высота
+					background: rgb(240, 240, 240, 1);//задает цвет 
+					border-radius: 16px; //скругляет углы  
+				}
+			}
+		// .media-stay-safe__item
+		&__item {
+			position: absolute; //позицианируется относительно родителя 
+			background-color: $pink; // цвет фона
+			border-radius: rem(30); //скругляет углы
+			width: rem(77); //ширина
+			height: rem(77); //высота
+		}
+
+		// .media-stay-safe__item-1
+		&__item-1 {
+			top: 0; //позицианирует сверху
+			left: 0; // позицианирует слева
+			width: rem(147); // ширина
+			height: rem(147); //высота
+		}
+
+		// .media-stay-safe__item-2
+		&__item-2 {
+			bottom: 0; // позицианирует снизу
+			left: rem(33); // позицианирует слева
+		}
+
+		// .media-stay-safe__item-3
+		&__item-3 {
+			bottom: rem(107); 
+			right: rem(33);
+		}
+}
+
+
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+
+.experts {
+	background-color: $bg; //цвет фона
+	padding: rem(103) rem(0) rem(116) rem(0);
+		@media (max-width: em(767.98)){ //брекпоинт при разрешении меньше данного
+			padding: rem(103) rem(0) rem(116) rem(0);
+		}
+
+	// .experts__body
+	&__body {
+		display: flex; //выравнивает эллемент согласно флекс модели
+		align-items: center;
+			@media (max-width: rem(767.98)){ // брек при разрешении экрана меньшк данного
+				align-items: stretch; // растягивает ээлемееи что бы тот занял всё доступное место
+				flex-direction: column; // выравнивает эллементы в колонку
+			}
+			@media (max-width: rem(479.98)){ //брек при разрешении экрана меньше данного
+				margin-top: rem(50);
+			}
+	}
+
+	// .experts__content
+	&__content {
+		flex: 0 1 50%; //разделяет блок между двумя под блоками 
+		padding: rem(0) rem(20) rem(0) rem(0);
+		margin-bottom: rem(15);
+		@media (max-width: rem(767.98)) { //брек при разрешении меньше данного
+			padding: 0;
+			margin: rem(0) rem(0) rem(30) rem(0);
+		}
+	}
+
+	// .experts__text-block
+	&__text-block {
+		max-width: rem(400);
+		@media (max-width: rem(767.98)){
+			max-width: rem(1057);
+		}
+	}
+
+	// .experts__video
+	&__video {
+	flex: 0 1 50%;	//разделяет блок между двумя под блоками
+	padding: rem(150) rem(0);
+	position: relative; //делает эллемент родителем
+	@media (max-width: rem(767.98)){
+		padding: rem(150) rem(0);
+	}
+		iframe{
+			position: absolute; //позицианирует относительно родителя 
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover; //растягивает ээлемент на весь размер контейнера
+		}
+	}
+}
+.statistics-experts {
+	max-width: rem(655);
+	margin: 0px auto;
+	
+	position: relative; //делает эллемент родителем
+	
+
+	// .statistics-experts__body
+	&__body {
+		background-color: $white; // цвет фона
+		box-shadow: 0px 2px 24px $sh; //тень
+		border-radius: 16px; //скругляет углы
+		position: relative; //делает эллемент родителем
+		z-index: 2; //накладывает эллементы поверх тех у кого индекс меньше
+		margin: rem(0) rem(0) rem(80) rem(0);
+		@media (max-width: rem(767.98)){ //брек при разрешении экрана меньше данного
+			margin: rem(0) rem(0) rem(50) rem(0);;
+		}
+	}
+
+	// .statistics-experts__decor
+	&__decor {
+		position: absolute; // позицианирует относительно родителя
+		background-color: $pink; //цвет фона
+		border-radius: rem(30); // скругляет углы
+	}
+}
+.body-statistics-experts {
+	padding: rem(20) rem(80);
+	display: flex; //делает эллементы блочными и выравнивает в строку
+	align-items: center; // позицианирует эллементы по центру
+	@media (max-width: rem(767.98)){ //брек при разрешении меньше данного
+		padding: rem(25) rem(25);
+	}
+	@media (max-width: rem(479.98)){ //брек при разрешении мньшу данного
+		flex-direction: column; // выравнивает эллементы в колонку 
+			&:not(last-child){ //действие применяется ко всем эллементам кроме последнего
+				margin: rem(0) rem(0) rem(15) rem(0);
+			}
+	}
+	@media  (max-width: rem(767.98)) // Брекпоинт при разрешении экрана меньше 768px
+    {
+        padding: rem(25) rem(40); // Уменьшение внутренних отступов слева и справа
+        gap: rem(30);//отступ между блоками
+    } 
+    @media  (max-width: rem(667.98)) // Брекпоинт при разрешении экрана меньше 668px
+    {
+        padding: rem(25) rem(20); // Уменьшение внутренних отступов слева и справа
+    } 
+    @media  (max-width: rem(567.98)) // Брекпоинт при разрешении экрана меньше 568px
+    {
+        padding: rem(25) rem(0); // Уменьшение внутренних отступов слева и справа
+    }
+    @media  (max-width: rem(479.98)) // Брекпоинт при разрешении экрана меньше 480px
+    {
+        flex-direction: column; // Выстраивание элементов в колонку
+    }
+
+	// .body-statistics-experts__item
+	&__item {
+		flex: 1 1 25%; //разделяет блок между двумя под блоками
+		text-align: center; //позицианирует текст по центру
+			&:last-child{ // применяет действие к последнему эллементу
+				flex: 0 1 50%; //разделяет блок между двумя под блоками
+			}
+	}
+
+	// .body-statistics-experts__value
+	&__value {
+		font-weight: 700; //начертание
+		font-size: rem(36); //кегель
+		line-height: 1.2; //межстрочный
+		letter-spacing: rem(1); //межсимвольный
+		color: $pink; //цвет
+		
+	}
+
+	// .body-statistics-experts__text
+	&__text {
+		font-weight: 700;
+		font-size: rem(11);
+		line-height:  1.8;
+		letter-spacing: rem(1);
+		text-transform: uppercase; //делает эллементы текста с строчных в заглавные 
+		color: $mainColor;
+	}
+}
+.statistics-experts-1 {
+	width: rem(65);
+	height: rem(65);
+	transform: rotate(-30deg); //поворачивает эллемент вокруг своей оси
+	bottom: rem(-21);
+	left: rem(-21);
+	border-radius: rem(16);
+}
+.statistics-experts-2 {
+	height: rem(97); // Высота
+	width: rem(97); // Ширина
+	right: 50%; // Позиционирование по горизонтали
+	top: rem(-40); // Позиционирование по вертикали
+	transform: rotate(30deg); // Поворот элемента
+	
+}
+.statistics-experts-3 {
+	height: rem(128); // Высота
+    width: rem(128); // Ширина
+    right: rem(-50); // Позиционирование по горизонтали
+    top: rem(0);  // Позиционирование по вертикали
+    transform: rotate(-30deg); // Поворот элемента
+}
+
+
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+
+.healthcare {
+	padding: rem(87) rem(0) rem(36) rem(0);
+
+	// .healthcare__container
+
+	&__container {
+	}
+
+	// .healthcare__block-text
+	&__block-text {
+		margin: rem(0) rem(0) rem(62) rem(0);
+	}
+
+	// .healthcare__items
+	&__items {
+		display: flex;
+		
+		@media (max-width: rem(760.98)){
+			flex-direction: column; // выравнивает эллементы в колонку
+		}
+	}
+
+	// .healthcare__item
+	&__item {
+		&:not(:last-child){
+			margin: rem(0) rem(0) rem(0) rem(0);
+		}
+	}
+
+	&__column{
+		position: relative; //делает эллемент родителем
+		padding: rem(0) rem(36) ;
+		flex: 0 1 33.333%; //разделяет блок между двумя под блоками
+		
+	}
+}
+.text-block {
+
+	// .text-block__text-mw
+	&__text-mw {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+}
+.block-text {
+
+	// .block-text__center
+	&__center {
+		text-align: center;
+		
+	}
+}
+
+.healthcare-column {
+	position: relative;
+	@media (max-width: rem(1087)){ //брек при разрешении экрана меньше данного
+		padding: rem(0) rem(15) ;
+	}
+	
+	// .healthcare-column__1
+	&__1 {
+		&::before, &::after{
+			content: ' ';
+			position: absolute; 
+			background-color: $pink;
+			border-radius: rem(16);
+		}
+
+		&::before{
+			z-index: -2; // помещает эллемент по родителем
+			width: rem(65);
+			height: rem(65);
+			bottom: rem(-35);
+			left: rem(15);
+			transform: rotate(-30deg); //поворачивает эллемент
+		}
+
+		&::after{
+			z-index: -2; //помещает эллемент под родителем 
+			width: rem(97);
+			height: rem(97);
+			top: rem(35);
+			right: rem(-10);
+			transform: rotate(25deg); // поворачивает эллемент
+			border-radius: rem(30);
+		}
+	}
+
+	// .healthcare-column__2
+	&__2 {
+		&::before, &::after{
+			content: ' '; //обязательное свойчтво ответственное за отображение контента
+			position: absolute;
+			background-color: $pink;
+			border-radius: rem(16);
+		}
+
+		&::after{
+			z-index: -2; //помещает эллемент под родителем
+			width: rem(127.47);
+			height: rem(127.47);
+			bottom: rem(-50);
+			right: rem(-40);
+			transform: rotate(-30deg); //поворачивает эллемент
+			border-radius: rem(30);
+		}
+	}
+
+	// .healthcare-column__3
+	&__3 {
+		&::before, &::after{
+			content: ' '; //обязательное свойство ответственное за отображение эллементов
+			position: absolute; 
+			background-color: $pink;
+			border-radius: rem(16);
+		}
+
+		&::after{
+			z-index: -2; //помещает эллемент под родителя 
+			width: rem(65); 
+			height: rem(65);
+			top: rem(-20);
+			right: rem(20);
+			transform: rotate(-30deg); //поворачивает эллемент
+		}
+	}
+}
+
+.item-healthcare {
+	background: $white;
+	box-shadow: 0 4px 18px $sh;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column; // выравнивает эллементы в колнку
+	align-items: center; //выравнивание по центру 
+	text-align: center; //выравнивание по центру текста
+	padding: rem(36) rem(17);
+	@media (max-width: rem(1087)) // Брекпоинт при разрешении экрана меньше 1087px
+    {
+        padding: rem(15); // Внутренний отступ
+    }
+    @media (max-width: rem(767.98)) // Брекпоинт при разрешении экрана меньше 768px
+    {
+        &:first-child // Обращение к первому элементу (блоку)
+        {
+            margin-top: rem(35); // Внешний отступ сверху
+        }
+    }
+
+	// .item-healthcare__icon
+	&__icon {
+		margin: rem(0) rem(0) rem(58) rem(0);
+	}
+
+	// .item-healthcare__title
+	&__title {
+		font-weight: 700;
+		font-size: rem(16);
+		line-height: 138.5%;
+		color: $mainColor;
+		margin: rem(0) rem(0) rem(4) rem(0);
+	}
+	// .item-healthcare__text
+	&__text {
+		line-height: 138.5%;
+	}
+}
+
+
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+

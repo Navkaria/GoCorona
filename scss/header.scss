@@ -1,0 +1,248 @@
+//?========================================= Start =========================================//
+
+
+.header {
+	position: absolute; // Элемент становится родителем
+	width: 100%; // устанавливаем ширину
+	top: 0; //
+	left: 0;
+	z-index: 50; //помещает эллемент над родителем 
+	@media (max-width: rem(767.98)){ //брек при разрешении экрана меньше данного
+		.header:target .menu__body {
+			left: 0;
+		}
+	}
+	&__container {
+		display: flex; //деалет эллемент блочным и выстраивает его в строку 
+		min-height: 114px; //минимальная высота 
+		align-items: center; 
+		//===ПК===//
+		@media (max-width: rem(1087)) { //брек при разрешении экрана меньше данного
+			max-width: 970px;
+			min-height: rem(124);
+		}
+		//===Планшет===// 
+		@media (max-width: rem(991.98)) { //брек при разрешении экрана меьше данного
+			max-width: 750px;
+			min-height: rem(114);
+		}
+		//===Телефон===//
+		@media (max-width: rem(767.98)) { //брек при разрешении экрана меньше данного
+			max-width: none;
+		}
+		//===Маленькие телефоны===//
+		@media (max-width: 360.98px) { //брек при разрешении экрана меньше данного
+		}
+	}
+
+	&__logo{
+		position: relative; // делает эллемент родителем
+		z-index: 5; //позицианирует эллемент над родителем 
+		@media (max-width: rem(359.98)){ //брек при разрешении меньше данного
+            flex: 0 0 rem(40); //задаем ширину логотипу
+            overflow: hidden; //обрезаем то что выходит за пределы ограничения ширины
+        }
+	}
+
+	&__menu {
+		flex: 1 1 auto; //равно распределяет эллемты внутри контейнера
+	}
+
+	&__button {
+		flex: 0 0 252px; //назначем ширину объекта
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		@media (max-width: rem(991.98)) {
+			flex: 0 0 170px; //назначаем ширину объекта
+		}
+	}
+}
+
+@media (max-width: rem(767.98)){ //брек при разрешении экрана меньше данной
+	.header:target .menu__body {
+		left: 0;
+	}
+	.header:target .menu__body::before {
+		content: ' '; // обязательное свойство отвечающее за отображение контента 
+		position: fixed; //фиксирует объект
+		top: 0;
+		left: 0;
+		height: rem(90);
+		width: 100%;
+		background-color: $SMB;
+
+	}
+    .header:target .icon-menu{
+		display: none;
+	}
+    .header:target .close-icon-menu{
+		display: flex; //делает ээлемент блочным и выстраивает в строку 
+        z-index: 5; //позицианирует эллемент над родителем 
+	}
+
+}
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+
+.menu {
+	display: flex; // делает эллемент блочным и выстраивает в строку 
+	justify-content: flex-end; // прижимает эллементы к правой стороне контейнера
+    padding: rem(0) rem(40) rem(0) rem(0);
+    @media  (max-width: rem(991.98)) { //брек при разрешении экрана меньше данного
+        padding: rem(0) rem(30) rem(0) rem(0);
+    }
+	
+	&__list {
+		display: flex; //делает эллемент блоычным и встраивает его в строку 
+		gap: rem(40); //устанавливает отступы между строками и столбцами 
+        @media (max-width: rem(767.98)){ //брек при разрешении экрана меньше данного
+            flex-direction: column; // позицианирует эллементы в столбец 
+            justify-content: center;
+            align-items: center;
+			gap: rem(10); // устанавливает отступы между строками и толбцами 
+        }
+	}
+
+	&__item {
+        @media (max-width: rem(767.98)){ // брек при разрешении экрана меньше данного
+        margin: 0 0 rem(15) 0;
+        &:last-child{ //лбращение к последнему эллементу 
+            margin-bottom: 0;
+        }
+        }
+    }
+
+	&__link {
+		font-family: $FH;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 10px;
+		line-height: 1.2;
+		color: $mainColor;
+		letter-spacing: rem(1);
+        @media (max-width: rem(767.98)){ //брек при разрешении экрана меньше данного
+			color: $white;
+			font-size: 20px;
+        }
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	&__body{
+		@media (max-width:767.98px) {
+			position: fixed; //фиксирует эллемент 
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			overflow: auto; //управляет отображением содержимого, при чем свойство auto означает что полоса прокрутки не появится без надобности 
+			background-color: $SMB;
+			padding: 150px 15px 30px 15px;
+			transition: left 0.3s ease 0s; //плавность анимации
+		}
+	}
+}	
+
+@media (max-width: 360.98px) {
+	.header__logo {
+	flex: 0 0 40px; //задает ширину
+	overflow: hidden; //обрезает то что выходит за пределы ширины
+	}
+}
+
+
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+
+.button {
+	display: inline-block; //эллемент становится блочным сохраняя свойства строячного эллемента 
+	white-space: nowrap; //запрещает перенос строки
+	font-family: $FH;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 10px;
+	line-height: 1.2;
+	letter-spacing: rem(1);//межбуквенный интервал
+	color: $sw;
+	padding: 14px 30px;
+	border-radius: 5px;
+	background-color: $pink;
+	transition: background-color .5s ease 0s;	
+		&:hover{
+			background-color: $SMB;
+		}
+}
+.button-blue {
+	position: relative; //делает эллемент родителем 
+    z-index: 5; // размещает эллемент поверх родителя
+	background-color: $sb;
+	@media (max-width: rem(767.98)) { //брек при разрешении экрана ниже данного
+		position: relative;
+		left: 40%;
+		transform: translate(-50%, 0); //изменяет размер
+	}
+		&:hover{
+			background-color: $gb;
+		}
+}
+//!========================================== End ==========================================//
+//==========================================================================================//
+//?========================================= Start =========================================//
+.icon-menu{
+    display: none;
+    @media (max-width: rem(767.98)){
+        display: flex; //делает эллемент блочным и выравнивает в строку
+        position: relative;
+        flex: 0 0 rem(30); //ширина блока
+        height: rem(18);
+        flex-direction: column; // выстраивает эллементы в колонку 
+        justify-content: space-between; //равномерно распределяет эллементы по контейнеру
+        margin: 0 0 0 rem(20);
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s; //плавность анимации
+            height: rem(2);
+            background-color: $pink1;
+        }
+        span{
+            height: rem(2);
+            background-color: $pink1;
+        }
+    }
+}
+.close-icon-menu{
+    display: none; // удаляет эллемент из содержимого страницы
+    @media (max-width: rem(767.98)) { //брек при разрешении экрана меньше данного
+        flex: 0 0 30px; //устанавливает ширину эллемента
+    height: 30px;
+    position: relative;
+    margin: 0px 0px 0px 20px;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            background-color: $pink1;
+            height: rem(2);
+        }
+		//перел 
+        &::before{
+            transform: rotate(-45deg); //поворот линии
+
+        }
+		//после
+        &::after{
+            transform: rotate(45deg); //поворот линии
+        }
+    }
+}
+
+//!========================================== End ==========================================//
+//==========================================================================================//
+
